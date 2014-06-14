@@ -52,6 +52,12 @@ class User{
     });
   }
 
+  static findByTwitterId(twitterId, fn){
+    userCollection.findOne({twitterId:twitterId},(err, user)=>{
+      fn(err, _.extend(user, User.prototype));
+    });
+  }
+
   save(fn) {
     userCollection.save(this, ()=>fn());
   }

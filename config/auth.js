@@ -9,9 +9,9 @@ module.exports = {
 		'callbackURL' 	: 'http://localhost:4000/auth/facebook/callback'
 	},
 
-	// 'twitterAuth' : {
-	// 	'consumerKey' 		: 'your-consumer-key-here',
-	// 	'consumerSecret' 	: 'your-client-secret-here',
-	// 	'callbackURL' 		: 'http://localhost:8080/auth/twitter/callback'
-	// },
+	'twitterAuth' : {
+		'consumerKey' 		: 'MBNAkO3P5fCnbchroRBwfrUAM',
+		'consumerSecret' 	: 'FeJLWWixHhLOqbO7W61Xlcs3R5BX51Ad3Ro5GkuxXf56AG77Df',
+		'callbackURL' 		: 'http://localhost:4000/auth/twitter/callback'
+	},
 };

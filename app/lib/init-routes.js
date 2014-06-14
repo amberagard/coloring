@@ -29,12 +29,21 @@ function load(app, fn){
   app.all('*', users.lookup);
 
   app.get('/', dbg, home.index);
+
   app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'public_profile, email' }));
   app.get('/auth/facebook/callback',
 		passport.authenticate('facebook', {
 			successRedirect : '/display',
 			failureRedirect : '/'
 		}));
+
+  app.get('/auth/twitter', passport.authenticate('twitter'));
+  app.get('/auth/twitter/callback',
+		passport.authenticate('twitter', {
+			successRedirect : '/display',
+			failureRedirect : '/'
+		}));
+
   app.post('/login', dbg, users.login);
   app.post('/register', dbg, users.register);
   app.get('/logout', dbg, users.logout);
