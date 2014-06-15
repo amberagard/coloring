@@ -5,47 +5,26 @@ html
     title= title
     link(rel='stylesheet' href='/../../css/animate.css')
     link(rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+    link(rel='stylesheet' href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
     link(href='/less/app.css', rel='stylesheet')
   body
 
-    .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-        .container
-            .nav-bar-header
-                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-                    span.sr-only Toggle navigation
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar
-            if(!user)
-              .navbar-collapse.collapse
-                ul.nav.navbar-nav.navbar-right.navbar-form
-                  //- form.navbar-form.navbar-right(action='/login', method='POST')
-                  //-     .form-group
-                  //-         input.form-control.email(type='email', name='email' placeholder='Email')
-                  //-     .form-group
-                  //-         input.form-control.password(type='password', name='password' placeholder='Password')
-                  li: button.signin.btn.btn-success.login Login
-                  //li: button.register.btn.btn-warning.btn.btn-primary.btn(type='submit', data-toggle='modal', data-target='#myModal') Register
-            if(user)
-              ul.nav.navbar-nav.navbar-left
-                li: a.navbar-text.display(href='/display') Color
-              ul.nav.navbar-nav.navbar-right
-                //li: a(href='#') Signed in as #{user.facebook.name}
-                li: a.navbar-text.logout(href='/logout') Logout
-    if(!user)
-      .modal.fade#login(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
-        .modal-dialog
-          .modal-content
-            .modal-header
-              button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
-              h4.modal-title#myModalLable Login Form
-            .modal-body
-              a.btn.btn-primary(href='/auth/facebook')
-                span.fa.fa-facebook
-                  | Facebook
-              a.btn.btn-primary(href='/auth/twitter')
-                span.fa.fa-twitter
-                  | Twitter
+    if(user)
+      .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+          .container
+              .nav-bar-header
+                  button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                      span.sr-only Toggle navigation
+                      span.icon-bar
+                      span.icon-bar
+                      span.icon-bar
+
+                ul.nav.navbar-nav.navbar-left
+                  li: a.navbar-text.display(href='/display') Color
+                ul.nav.navbar-nav.navbar-right
+                  //li: a(href='#') Signed in as #{user.facebook.name}
+                  li: a.navbar-text.logout(href='/logout') Logout
+
 
 
     block content

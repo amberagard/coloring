@@ -1,17 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Kaushan+Script);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 
-#registration, #login {
+#login {
   display: none;
   margin: auto;
   text-align: center;
 }
 
-.regemail, .regpassword {
-  margin-bottom: 10px;
-}
-
-.email, .password, .login {
+.login {
   margin-right: 10px;
 }
 
@@ -125,18 +121,32 @@ a.navbar-text.display:hover, a.navbar-text.logout:hover {
   font-size: 100px;
   margin: auto;
   text-align: center;
-  margin-top: 300px;
+  margin-top: 150px;
   text-shadow: 1px 1px 2px black;
 }
 
-.register.btn.btn-warning.btn.btn-primary.btn {
-  background-color: #F1AF61;
-  border-color: #F1AF61;
+.signin.btn.btn-success.login {
+  background-color: #4F413E;
+  border-color: #4F413E;
+  box-shadow: 1px 1px 2px black;
 }
 
-.signin.btn.btn-success.login {
-  background-color: #CA6049;
-  border-color: #CA6049;
+.signin.btn.btn-success.login:hover {
+  background-color: #665349;
+  border-color: #665349;
+}
+
+div.button {
+  margin: auto !important;
+  text-align: center !important;
+  padding-top: 30px;
+}
+
+.coloring {
+  font-size: 30px;
+  padding-top: 10px;
+  color: #DECAB6;
+  text-shadow: 1px 1px 2px black;
 }
 
 @-webkit-keyframes bounceInLeft {
@@ -194,4 +204,53 @@ a.navbar-text.display:hover, a.navbar-text.logout:hover {
 .bounceInLeft {
   -webkit-animation-name: bounceInLeft;
   animation-name: bounceInLeft;
+}
+
+.btn.btn-primary {
+  margin-right: 10px;
+}
+
+.btn.btn-primary.facebook {
+  background-color: #45619D;
+  border-color: #45619D;
+}
+
+.btn.btn-primary.facebook:hover {
+  background-color: #2C406A;
+  border-color: #2C406A;
+}
+
+.btn.btn-primary.twitter {
+  background-color: #55ACEE;
+  border-color: #55ACEE;
+}
+
+.btn.btn-primary.twitter:hover {
+  background-color: #3E86BD;
+  border-color: #3E86BD;
+}
+
+span.fa.fa-facebook::before {
+  padding-right: 5px;
+}
+
+span.fa.fa-twitter::before {
+  padding-right: 5px;
+}
+
+#canvasDiv {
+	cursor:wait;
+	width:700px;
+	height:500px;
+  background-color: white;
+  margin: auto;
+  text-align: center;
+  margin-top: 40px;
+  box-shadow: 2px 2px 5px black;
+}
+
+#canvasDiv {
+	cursor:pointer;
+	width:700px;
+	height:500px;
 }

@@ -2,3 +2,23 @@ extends ../shared/template
 
 block content
   h1.mainheader.animated.bounceInLeft Color With Me
+
+  if(!user)
+    //- .navbar-collapse.collapse
+    //-   ul.nav.navbar-nav
+    div.button
+      button.signin.btn.btn-success.login.animated.bounceInLeft Login
+      .coloring.animated.bounceInLeft| to begin coloring!
+    .modal.fade#login(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+            h4.modal-title#myModalLable Login in with:
+          .modal-body
+            a.btn.btn-primary.facebook(href='/auth/facebook')
+              span.fa.fa-facebook
+                | Facebook
+            a.btn.btn-primary.twitter(href='/auth/twitter')
+              span.fa.fa-twitter
+                | Twitter
