@@ -3,4 +3,41 @@ extends ../shared/template
 block content
   h1.letscolor.animated.bounceInDown= title
 
-  #canvasDiv
+  .clearButton
+    button#clearCanvas.btn.btn-primary Clear Canvas
+
+  .colors
+    p.chooseColor Choose a color:
+    button#chooseYellow.color.btn.btn-primary
+    button#chooseOrange.color.btn.btn-primary
+    button#chooseRed.color.btn.btn-primary
+    button#choosePink.color.btn.btn-primary
+    button#choosePurple.color.btn.btn-primary
+    button#chooseBlue.color.btn.btn-primary
+    button#chooseGreen.color.btn.btn-primary
+    button#chooseBrown.color.btn.btn-primary
+    button#chooseGray.color.btn.btn-primary
+    button#chooseBlack.color.btn.btn-primary
+    button#chooseWhite.btn.btn-primary Eraser
+
+  .sizes
+    p.chooseSize Choose a Pen Size:
+    button#chooseSmall.btn.btn-primary Small
+    button#chooseMedium.btn.btn-primary Medium
+    button#chooseLarge.btn.btn-primary Large
+    button#chooseExtraLarge.btn.btn-primary Extra Large
+
+  #drawings
+    p.chooseDrawing Choose a Drawing
+    select#drawing
+      option(value='none') Choose a Drawing
+      option(data-picture='/img/dragon.png', value='dragon') Dragon
+      option(data-picture='/img/mammoth.png', value='mammoth') Mammoth
+      option(data-picture='/img/narwhal.png', value='narwhal') Narwhal
+      option(data-picture='/img/watermelonduck.png', value='watermelon duck') Watermelon Duck
+      option(data-picture='/img/world.png', value='world') World
+      option(data-picture='/img/horse.png', value='horse') Horse
+      option(data-picture='/img/sonic.png', value='sonic') Sonic
+
+
+  #canvasDiv.animated.bounceInLeft
