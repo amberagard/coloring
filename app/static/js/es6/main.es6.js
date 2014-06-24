@@ -11,8 +11,18 @@
     $('.login').click(login);
     $('#generate').click(change);
     $('#save').click(saveImage);
+    //getDrawings();
     imagePicker();
   }
+
+  // function getDrawings() {
+  //   ajax('/drawings/#{id}', 'get', null, fields=>{
+  //     var drawing = fields.data.drawings;
+  //     drawing.forEach(d=>{
+  //       $('#drawing').append(`<option data-url=${d.url}, class='drawing'></option>`);
+  //     });
+  //   });
+  // }
 
   function saveImage() {
     var canvas = document.getElementById('canvas');
@@ -87,8 +97,12 @@
   context = canvas.getContext('2d');
 
   function change() {
+    // var url = $('#drawing option:selected').data('url');
+    // ajax('/drawings/create', 'post', {url:url}, d=>{
+    //   window.location= `/drawings/${d._id}`;
+    // });
     outlineImage.onload = function() {resourceLoaded();};
-    var imageSource = $('#drawing').find(':selected').data('picture');
+    var imageSource = $('#drawing').find(':selected').data('picture').data('url');
     outlineImage.src = imageSource;
     if(imageSource) {
       redraw();

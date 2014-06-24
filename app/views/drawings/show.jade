@@ -2,11 +2,23 @@ extends ../shared/template
 
 block content
 
-  h1.drawingname= drawing.name
-  //#showDrawing(data-id=drawing._id.toString(), data-drawing=drwng)
-  //#showDrawing(style='background-image: url(#{drawing.url});')
-  #showDrawing
+  #showDiv
+    a.share(href='#') Share Me!
+    h1.drawingname= drawing.name
+    //input(type='hidden', name='userId', value='#{user._id}')
+    img#showDrawing(src='/img/#{drawing.userId}/#{drawing.name}.png')
 
-//- block scripts
-//-   script.
-//-     var drawing = !{JSON.stringify(drwng)}
+block scripts
+  script.
+    $(document).ready(function() {
+      $('.share').hideshare({
+        //link: 'http://localhost:4000/drawings/#{drawing._id}',
+        title: 'Check out my drawing!',
+        media: 'http://localhost:4000/drawings/#{drawing._id}',
+        facebook: true,
+        twitter: true,
+        pinterest: false,
+        position: 'top',
+        speed: 50
+      });
+    });

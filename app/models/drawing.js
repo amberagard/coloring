@@ -6,16 +6,17 @@
 var drawingCollection = global.nss.db.collection('drawings');
 var Mongo = require('mongodb');
 var _ = require('lodash');
-var crypto = require('crypto');
+
 var fs = require('fs');
 var path = require('path');
 
 class Drawing{
-  static create(res.locals.userId, fields, files, fn){
+  static create(fields, files, fn){
     var drawing = new Drawing();
     drawing._id = Mongo.ObjectID();
-    drawing.userId = Mongo.ObjectId(res.locals.userId);
+    drawing.userId = fields.userId.toString();
     drawing.name = fields.name;
+    drawing.url = fields.url;
     drawing.art = [];
     drawing.processArt(files.art);
     drawing.save(()=>fn(drawing));
@@ -23,8 +24,8 @@ class Drawing{
 
   processArt(art){
     art.forEach(a=>{
-      var name = crypto.randomBytes(12).toString('hex') + path.extname(a.originalFilename).toLowerCase();
-      var file = `/img/${this.userId}/${this._id}`;
+      var name = this.name + path.extname(a.originalFilename).toLowerCase();
+      var file = `/img/${this._id}/${this.name}`;
       var photo = {};
       photo.file = file;
 
@@ -52,8 +53,12 @@ class Drawing{
   static findByUserId(userId, fn){
     userId = Mongo.ObjectID(userId);
     drawingCollection.find({userId:userId}).toArray((e, objs)=>{
-      if(objs.length === 0){fn(null); return;}
+      console.log(userId);
+      console.log('######');
+      console.log(objs);
+      //if(objs.length === 0){fn(null); return;}
       var drawings = objs.map(o=>_.create(Drawing.prototype, o));
+      console.log(drawings);
       fn(drawings);
     });
   }

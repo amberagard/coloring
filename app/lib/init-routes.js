@@ -52,6 +52,7 @@ function load(app, fn){
   app.post('/drawings/create', dbg, drawings.create);
   app.get('/drawings/:id', dbg, drawings.show);
   app.get('/users/:id', dbg, users.show);
+  //app.get('/users/:id', dbg, drawings.index);
 
   console.log('Routes Loaded');
   fn();

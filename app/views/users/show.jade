@@ -5,6 +5,13 @@ block content
 
   #uploadDrawing
     form(action='/drawings/create', method='post', enctype='multipart/form-data')
-      input(type='text', name='name')
+      input.uploadName(type='text', name='name')
+      input(type='hidden', name='userId', value='#{user._id}')
       input.uploadDrawing(type='file', name='art')
       button.addDrawing.btn.btn-primary Add Drawing
+
+  //- table
+  //-   p= drawings
+    //- each drawing in drawings
+      //- tr
+      //-   td: img(src='/img/#{user._id}/#{drawing.name}.png')
