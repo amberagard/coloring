@@ -14,7 +14,8 @@
 
 body {
   margin-top: 75px;
-  margin-left: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
   background-image: url('/img/background1.png');
 }
 
@@ -50,7 +51,7 @@ a.navbar-text.display:hover, a.navbar-text.logout:hover {
   color: #F1AF61 !important;
 }
 
-.letscolor {
+.letscolor, .myColoringBook {
   color: #F1AF61;
   text-shadow: 1px 1px 2px black;
   margin: auto;
@@ -262,7 +263,7 @@ span.fa.fa-twitter::before {
   margin-top: 25px;
 }
 
-#clearCanvas, #chooseSmall, #chooseMedium, #chooseLarge, #chooseExtraLarge {
+#clearCanvas, #chooseSmall, #chooseMedium, #chooseLarge, #chooseExtraLarge, #send, #generate, #save, .addDrawing {
   background-color: #9E8372;
   border-color: #9E8372;
   box-shadow: 1px 1px 2px black;
@@ -336,7 +337,7 @@ span.fa.fa-twitter::before {
 }
 
 
-#clearCanvas:hover {
+#clearCanvas:hover, #chooseSmall:hover, #chooseMedium:hover, #chooseLarge:hover, #chooseExtraLarge:hover, #send:hover, #generate:hover, #save:hover, .addDrawing:hover {
   background-color: #BE9D8B;
   border-color: #BE9D8B;
 }
@@ -353,7 +354,7 @@ button.color {
   height: 25px;
 }
 
-.chooseColor, .chooseSize, .chooseDrawing {
+.chooseColor, .chooseSize, .chooseDrawing, .chatHeader {
   font-size: 20px;
   color: #F1AF61;
   text-shadow: 1px 1px 2px black;
@@ -361,9 +362,10 @@ button.color {
 }
 
 select#drawing {
-  display: block !important;
+  display: inline-block !important;
   margin: auto;
   text-align: center;
+  margin-right: 15px;
 }
 
 .image_picker_image {
@@ -380,11 +382,54 @@ select#drawing {
   display: none !important;
 }
 
-.drawing {
-  display: block !important;
+#letscolor {
+  //border: 3px solid black;
+  width: 100%;
+  padding-left: 10px;
+  text-align: center;
+
+  td.coloringBoard {
+    width: 70%;
+    padding: 20px;
+  }
+
+  td.chat {
+    width: 30%;
+    //border-left: 1px dotted #DECAB6;
+    //padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 }
 
-#drawing.owl {
-  width: 300px !important;
-  height: 300px !important;
+#chat li {
+  list-style-type: none;
+  font-size: 20px;
+  color: #4F413E;
+}
+
+#chat li:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+td.chat {
+  vertical-align: top;
+}
+
+#message {
+  margin-right: 10px;
+}
+
+#drawing select{
+  display: inline !important;
+}
+
+#uploadDrawing {
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: 30px;
+}
+
+input[type=file] {
+  display: inline;
 }

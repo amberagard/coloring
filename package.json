@@ -37,7 +37,8 @@
     "passport-facebook": "*",
     "passport-twitter":  "*",
     "connect-flash":     "*",
-    "cookie-parser":     "*"
+    "cookie-parser":     "*",
+    "multiparty":        "*"
   },
   "devDependencies": {
     "grunt":                "*",

@@ -15,10 +15,13 @@ exports.register = (req, res)=> {
   });
 };
 
+exports.show = (req, res)=> {
+  User.findById(req.params.id, artist=>{
+    res.render('users/show', {user:req.user, artist:artist});
+  });
+};
+
 exports.display = (req, res)=> {
-  console.log('********');
-  console.log(req.isAuthenticated());
-  console.log(req.user);
   res.render('users/display', {user: req.user, title: 'Let\'s Color!'});
 };
 
@@ -43,6 +46,5 @@ exports.login = (req, res, next)=> {
 
 exports.logout = (req, res)=> {
   req.logout();
-  //req.session.userId = null;
   res.redirect('/');
 };

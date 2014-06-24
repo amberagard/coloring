@@ -19,11 +19,19 @@ html
                       span.icon-bar
                       span.icon-bar
                       span.icon-bar
-
+              if(user.facebookId)
                 ul.nav.navbar-nav.navbar-left
                   li: a.navbar-text.display(href='/display') Color
+                  li: a.navbar-text.display(href='/users/#{user._id}') My Coloring Book
                 ul.nav.navbar-nav.navbar-right
-                  //li: a(href='#') Signed in as #{user.facebook.name}
+                  li: a(href='#') Signed in as #{user.facebook.name}
+                  li: a.navbar-text.logout(href='/logout') Logout
+              if(user.twitterId)
+                ul.nav.navbar-nav.navbar-left
+                  li: a.navbar-text.display(href='/display') Color
+                  li: a.navbar-text.display(href='/users/#{user._id}') My Coloring Book
+                ul.nav.navbar-nav.navbar-right
+                  li: a(href='#') Signed in as #{user.twitter.username}
                   li: a.navbar-text.logout(href='/logout') Logout
 
 

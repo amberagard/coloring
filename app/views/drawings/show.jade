@@ -1,0 +1,12 @@
+extends ../shared/template
+
+block content
+
+  h1.drawingname= drawing.name
+  //#showDrawing(data-id=drawing._id.toString(), data-drawing=drwng)
+  //#showDrawing(style='background-image: url(#{drawing.url});')
+  #showDrawing
+
+//- block scripts
+//-   script.
+//-     var drawing = !{JSON.stringify(drwng)}

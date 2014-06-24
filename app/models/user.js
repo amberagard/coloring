@@ -11,6 +11,7 @@ class User{
       if(!u){
         var user = new User();
         user.email = obj.email;
+        user.facebook.name = obj.facebook.name;
         user.password = bcrypt.hashSync(obj.password, 8);
         userCollection.save(user, ()=>fn(user));
       }else{

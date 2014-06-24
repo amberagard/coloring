@@ -1,0 +1,10 @@
+extends ../shared/template
+
+block content
+  h1.myColoringBook My Coloring Book
+
+  #uploadDrawing
+    form(action='/drawings/create', method='post', enctype='multipart/form-data')
+      input(type='text', name='name')
+      input.uploadDrawing(type='file', name='art')
+      button.addDrawing.btn.btn-primary Add Drawing

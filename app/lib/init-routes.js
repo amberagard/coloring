@@ -19,6 +19,7 @@ module.exports = (req, res, next)=>{
 function load(app, fn){
   var home = traceur.require(__dirname + '/../routes/home.js');
   var users = traceur.require(__dirname + '/../routes/users.js');
+  var drawings = traceur.require(__dirname + '/../routes/drawings.js');
 
   require('../../config/passport')(passport);
   app.use(passport.initialize());
@@ -48,6 +49,9 @@ function load(app, fn){
   app.post('/register', dbg, users.register);
   app.get('/logout', dbg, users.logout);
   app.get('/display', dbg, users.display);
+  app.post('/drawings/create', dbg, drawings.create);
+  app.get('/drawings/:id', dbg, drawings.show);
+  app.get('/users/:id', dbg, users.show);
 
   console.log('Routes Loaded');
   fn();

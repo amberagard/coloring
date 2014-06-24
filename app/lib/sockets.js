@@ -1,14 +1,25 @@
 'use strict';
 
 var Cookies = require('cookies');
+var traceur = require('traceur');
+var User;
+var users = {};
 
 exports.connection = function(socket){
-  addUserToSocket(socket);
+  if(global.nss) {
+    User = traceur.require(__dirname + '/../models/user.js');
+    addUserToSocket(socket);
+
+    socket.on('send-message', sendMessage);
+  }
 };
 
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
+function sendMessage(data) {
+  var socket = this;
+  //data.email = socket.nss.user.email;
+  socket.broadcast.emit('receive-message', data);
+  socket.emit('receive-message', data);
+}
 
 function addUserToSocket(socket){
   var cookies = new Cookies(socket.handshake, {}, ['SEC123', '321CES']);
@@ -19,17 +30,13 @@ function addUserToSocket(socket){
     decoded = decode(encoded);
   }
 
-  // 1. Find user in DB
-  // 2. Add user to socket
-  // 3. Inform the user they are online
-
-  // EXAMPLE CODE
-
-  // User.findByUserId(obj.userId, user=>{
-  //   socket.set('user', user, ()=>{
-  //     socket.emit('online');
-  //   });
-  // });
+  User.findById(decoded.userId, user=>{
+    users[decoded.userId] = user;
+    socket.nss = {};
+    socket.nss.user = user;
+    socket.emit('online', users);
+    socket.broadcast.emit('online', users);
+  });
 
   console.log(decoded);
 }
@@ -38,7 +45,3 @@ function decode(string) {
   var body = new Buffer(string, 'base64').toString('utf8');
   return JSON.parse(body);
 }
-
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
