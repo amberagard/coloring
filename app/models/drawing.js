@@ -11,10 +11,10 @@ var fs = require('fs');
 var path = require('path');
 
 class Drawing{
-  static create(fields, files, fn){
+  static create(userId, fields, files, fn){
     var drawing = new Drawing();
+    drawing.userId = Mongo.ObjectID(userId);
     drawing._id = Mongo.ObjectID();
-    drawing.userId = fields.userId.toString();
     drawing.name = fields.name;
     drawing.url = fields.url;
     drawing.art = [];

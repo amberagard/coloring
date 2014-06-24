@@ -7,6 +7,7 @@ block content
     h1.drawingname= drawing.name
     //input(type='hidden', name='userId', value='#{user._id}')
     img#showDrawing(src='/img/#{drawing.userId}/#{drawing.name}.png')
+    a(href='/users/#{drawing.userId}') Artist Page
 
 block scripts
   script.

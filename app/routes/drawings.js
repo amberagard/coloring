@@ -6,14 +6,15 @@ var multiparty = require('multiparty');
 
 exports.show = (req, res)=> {
   Drawing.findById(req.params.id, drawing=>{
-    res.render('drawings/show', {drawing:drawing, title:drawing.name});
+    res.render('drawings/show', {drawing:drawing, title:drawing.name, user:req.user});
   });
 };
 
 exports.create = (req, res)=>{
   var form = new multiparty.Form();
+  var userId = req.user._id;
   form.parse(req, (err, fields, files)=>{
-    Drawing.create(fields, files, (drawing)=>{
+    Drawing.create(userId, fields, files, (drawing)=>{
       res.redirect('/drawings/' + drawing._id);
     });
   });

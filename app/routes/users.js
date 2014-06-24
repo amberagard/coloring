@@ -2,6 +2,7 @@
 
 var traceur = require('traceur');
 var User = traceur.require(__dirname + '/../models/user.js');
+var Drawing = traceur.require(__dirname + '/../models/drawing.js');
 
 exports.register = (req, res)=> {
   User.register(req.body, u=> {
@@ -17,7 +18,10 @@ exports.register = (req, res)=> {
 
 exports.show = (req, res)=> {
   User.findById(req.params.id, artist=>{
-    res.render('users/show', {user:req.user, artist:artist});
+    Drawing.findByUserId(req.params.id, drawings=>{
+      console.log(drawings);
+      res.render('users/show', {user:req.user, artist:artist, drawings:drawings});
+    });
   });
 };
 
