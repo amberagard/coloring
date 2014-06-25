@@ -19,12 +19,3 @@ exports.create = (req, res)=>{
     });
   });
 };
-
-// exports.index = (req, res)=>{
-//   Drawing.findByUserId(req.params.id, drawings=>{
-//     console.log(req.params.id);
-//     console.log('^^^^^^');
-//     console.log(drawings);
-//     res.render('users/show/'+ req.params.id, {drawings:drawings});
-//   });
-// };

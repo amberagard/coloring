@@ -6,7 +6,6 @@ var initialized = false;
 var passport = require('passport');
 var flash = require('connect-flash');
 
-
 module.exports = (req, res, next)=>{
   if(!initialized){
     initialized = true;
@@ -25,7 +24,6 @@ function load(app, fn){
   app.use(passport.initialize());
   app.use(passport.session()); // persistent login sessions
   app.use(flash()); // use connect-flash for flash messages stored in session
-
 
   app.all('*', users.lookup);
 
@@ -52,7 +50,6 @@ function load(app, fn){
   app.post('/drawings/create', dbg, drawings.create);
   app.get('/drawings/:id', dbg, drawings.show);
   app.get('/users/:id', dbg, users.show);
-  //app.get('/users/:id', dbg, drawings.index);
 
   console.log('Routes Loaded');
   fn();

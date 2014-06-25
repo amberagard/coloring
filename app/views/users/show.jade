@@ -10,8 +10,9 @@ block content
       input.uploadDrawing(type='file', name='art')
       button.addDrawing.btn.btn-primary Add Drawing
 
-   table
-     each drawing in drawings
-       tr
-         td: img(src='/img/#{user._id}/#{drawing.name}.png')
-         a(href='/drawings/#{drawing._id}') #{drawing.name}
+  table#displayDrawings
+    each drawing in drawings
+      tr
+        td: a.displayDrawingName(href='/drawings/#{drawing._id}') #{drawing.name}
+      tr
+        td: img.displayDrawingImage(src='/img/#{user._id}/#{drawing.name}.png')

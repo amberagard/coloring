@@ -48,51 +48,49 @@ a:hover{
 }
 
 .share {
+  box-shadow: 1px 1px 2px black;;
   display: block;
-  width: 200px;
-  margin: 0 auto;
+  width: 150px;
+  margin: auto;
   color: #ffffff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
-  padding: 1em 0;
-  border: 1px solid;
+  padding: 10px;
   text-align: center;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   text-shadow: 1px 1px 1px rgba(159, 159, 159, 0.23);
-  border-color: #630e45;
   background-image: -webkit-gradient(
     linear,
     left top,
     left bottom,
-    color-stop(0, #DB0D93),
-    color-stop(1, #630E45)
+    color-stop(0, #C8B6A5),
+    color-stop(1, #69574C)
   );
-  background-image: -o-linear-gradient(bottom, #DB0D93 0%, #630E45 100%);
-  background-image: -moz-linear-gradient(bottom, #DB0D93 0%, #630E45 100%);
-  background-image: -webkit-linear-gradient(bottom, #DB0D93 0%, #630E45 100%);
-  background-image: -ms-linear-gradient(bottom, #DB0D93 0%, #630E45 100%);
-  background-image: linear-gradient(to bottom, #DB0D93 0%, #630E45 100%);
+  background-image: -o-linear-gradient(bottom, #C8B6A5 0%, #69574C 100%);
+  background-image: -moz-linear-gradient(bottom, #C8B6A5 0%, #69574C 100%);
+  background-image: -webkit-linear-gradient(bottom, #C8B6A5 0%, #69574C 100%);
+  background-image: -ms-linear-gradient(bottom, #C8B6A5 0%, #69574C 100%);
+  background-image: linear-gradient(to bottom, #C8B6A5 0%, #69574C 100%);
 }
 .share:hover {
-  border-color: #a65474;
   color: #ffffff;
-  text-shadow: 1px 1px 1px rgba(159, 159, 159, 0.23);
+  text-shadow: 1px 1px 1px rgba(159, 159, 159, 0.23);*/
   background-image: -webkit-gradient(
   	linear,
   	left top,
   	left bottom,
-  	color-stop(0, #A65473),
-  	color-stop(1, #FCBFE1)
+  	color-stop(0, #69574C),
+  	color-stop(1, #C8B6A5)
   );
-  background-image: -o-linear-gradient(bottom, #A65473 0%, #FCBFE1 100%);
-  background-image: -moz-linear-gradient(bottom, #A65473 0%, #FCBFE1 100%);
-  background-image: -webkit-linear-gradient(bottom, #A65473 0%, #FCBFE1 100%);
-  background-image: -ms-linear-gradient(bottom, #A65473 0%, #FCBFE1 100%);
-  background-image: linear-gradient(to bottom, #A65473 0%, #FCBFE1 100%);
+  background-image: -o-linear-gradient(bottom, #69574C 0%, #C8B6A5 100%);
+  background-image: -moz-linear-gradient(bottom, #69574C 0%, #C8B6A5 100%);
+  background-image: -webkit-linear-gradient(bottom, #69574C 0%, #C8B6A5 100%);
+  background-image: -ms-linear-gradient(bottom, #69574C 0%, #C8B6A5 100%);
+  background-image: linear-gradient(to bottom, #69574C 0%, #C8B6A5 100%);*/
 }
 .hideshare-list a {
   color: #dedede;

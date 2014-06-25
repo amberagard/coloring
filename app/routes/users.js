@@ -19,8 +19,7 @@ exports.register = (req, res)=> {
 exports.show = (req, res)=> {
   User.findById(req.params.id, artist=>{
     Drawing.findByUserId(req.params.id, drawings=>{
-      console.log(drawings);
-      res.render('users/show', {user:req.user, artist:artist, drawings:drawings});
+      res.render('users/show', {user:req.user, artist:artist, drawings:drawings, title: 'My Coloring Book'});
     });
   });
 };

@@ -5,21 +5,20 @@ block content
   #showDiv
     a.share(href='#') Share Me!
     h1.drawingname= drawing.name
-    //input(type='hidden', name='userId', value='#{user._id}')
     img#showDrawing(src='/img/#{drawing.userId}/#{drawing.name}.png')
-    a(href='/users/#{drawing.userId}') Artist Page
+    .showDivButtons
+      a.btn.btn-primary.artistpage(href='/users/#{drawing.userId}') Artist Page
 
 block scripts
   script.
     $(document).ready(function() {
       $('.share').hideshare({
-        //link: 'http://localhost:4000/drawings/#{drawing._id}',
         title: 'Check out my drawing!',
         media: 'http://localhost:4000/drawings/#{drawing._id}',
         facebook: true,
         twitter: true,
         pinterest: false,
-        position: 'top',
+        position: 'right',
         speed: 50
       });
     });

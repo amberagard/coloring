@@ -5,12 +5,12 @@ block content
   table#letscolor
     tr
       td.coloringBoard
-        h1.letscolor.animated.bounceInDown= title
-        .clearButton
+        h1.letscolor.animated.bounceInLeft= title
+        .clearButton.animated.bounceInLeft
           button#clearCanvas.btn.btn-primary Clear Canvas
           button#save.btn.btn-primary Save Drawing
 
-        .colors
+        .colors.animated.bounceInLeft
           p.chooseColor Choose a color:
           button#chooseYellow.color.btn.btn-primary
           button#chooseOrange.color.btn.btn-primary
@@ -24,14 +24,14 @@ block content
           button#chooseBlack.color.btn.btn-primary
           button#chooseWhite.btn.btn-primary Eraser
 
-        .sizes
+        .sizes.animated.bounceInLeft
           p.chooseSize Choose a Pen Size:
           button#chooseSmall.btn.btn-primary Small
           button#chooseMedium.btn.btn-primary Medium
           button#chooseLarge.btn.btn-primary Large
           button#chooseExtraLarge.btn.btn-primary Extra Large
 
-        #drawings
+        #drawings.animated.bounceInLeft
           p.chooseDrawing Choose a Drawing or Draw your Own!
           select#drawing
             option.option(value='none') Choose a Drawing
@@ -47,8 +47,7 @@ block content
         #canvasDiv.animated.bounceInLeft
         img#canvasImg
 
-
-      td.chat
+      td.chat.animated.bounceInDown
         p.chatHeader Chat
         input#message(type='text')
         button#send.btn.btn-primary Send

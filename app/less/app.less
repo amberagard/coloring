@@ -271,7 +271,7 @@ span.fa.fa-twitter::before {
   margin-top: 25px;
 }
 
-#clearCanvas, #chooseSmall, #chooseMedium, #chooseLarge, #chooseExtraLarge, #send, #generate, #save, .addDrawing {
+#clearCanvas, #chooseSmall, #chooseMedium, #chooseLarge, #chooseExtraLarge, #send, #generate, #save, .addDrawing, .artistpage {
   background-color: #9E8372;
   border-color: #9E8372;
   box-shadow: 1px 1px 2px black;
@@ -344,8 +344,7 @@ span.fa.fa-twitter::before {
   color: #000000;
 }
 
-
-#clearCanvas:hover, #chooseSmall:hover, #chooseMedium:hover, #chooseLarge:hover, #chooseExtraLarge:hover, #send:hover, #generate:hover, #save:hover, .addDrawing:hover {
+#clearCanvas:hover, #chooseSmall:hover, #chooseMedium:hover, #chooseLarge:hover, #chooseExtraLarge:hover, #send:hover, #generate:hover, #save:hover, .addDrawing:hover, .artistpage:hover {
   background-color: #BE9D8B;
   border-color: #BE9D8B;
 }
@@ -391,7 +390,6 @@ select#drawing {
 }
 
 #letscolor {
-  //border: 3px solid black;
   width: 100%;
   padding-left: 10px;
   text-align: center;
@@ -403,8 +401,6 @@ select#drawing {
 
   td.chat {
     width: 30%;
-    //border-left: 1px dotted #DECAB6;
-    //padding: 20px;
     background-color: rgba(255, 255, 255, 0.2);
   }
 }
@@ -436,6 +432,7 @@ td.chat {
   margin: auto;
   text-align: center;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 input[type=file] {
@@ -447,6 +444,7 @@ input[type=file] {
   height: 500px;
   background-color: #FFFFFF;
   box-shadow: 2px 2px 5px black;
+  margin-bottom: 40px;
 }
 
 .uploadName {
@@ -456,4 +454,38 @@ input[type=file] {
 #showDiv {
   margin: auto !important;
   text-align: center!important;
+}
+
+#displayDrawings {
+  margin: auto;
+  text-align: center;
+}
+
+.displayDrawingName {
+  color: #C09F8C;
+  text-shadow: 1px 1px 2px black;
+  font-size: 30px;
+}
+
+.displayDrawingName:hover {
+  color: #F1AF61;
+  text-shadow: 1px 1px 2px black;
+}
+
+.displayDrawingImage {
+  width: 700px;
+  height: 500px;
+  background-color: white;
+  border: none;
+  box-shadow: 2px 2px 5px black;
+  margin-top: 10px;
+}
+
+.showDivButtons {
+  margin: auto;
+  text-align: center;
+}
+
+#canvasImg {
+  display: none;
 }

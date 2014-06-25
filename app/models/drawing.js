@@ -2,7 +2,6 @@
 
 'use strict';
 
-//var bcrypt = require('bcrypt');
 var drawingCollection = global.nss.db.collection('drawings');
 var Mongo = require('mongodb');
 var _ = require('lodash');
@@ -53,12 +52,7 @@ class Drawing{
   static findByUserId(userId, fn){
     userId = Mongo.ObjectID(userId);
     drawingCollection.find({userId:userId}).toArray((e, objs)=>{
-      console.log(userId);
-      console.log('######');
-      console.log(objs);
-      //if(objs.length === 0){fn(null); return;}
       var drawings = objs.map(o=>_.create(Drawing.prototype, o));
-      console.log(drawings);
       fn(drawings);
     });
   }
