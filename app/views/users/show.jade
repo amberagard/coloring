@@ -16,3 +16,6 @@ block content
         td: a.displayDrawingName(href='/drawings/#{drawing._id}') #{drawing.name}
       tr
         td: img.displayDrawingImage(src='/img/#{user._id}/#{drawing.name}.png')
+      tr.delete
+        td: form(action='/drawings/#{drawing._id}/delete', method='POST')
+          button.deleteDrawing.btn.btn-primary Delete Drawing

@@ -57,6 +57,13 @@ class Drawing{
     });
   }
 
+  static deleteByDrawingId(drawingId, fn) {
+    drawingId = Mongo.ObjectID(drawingId);
+    drawingCollection.remove({_id:drawingId}, (e, drawing)=>{
+      fn(drawing);
+    });
+  }
+
   save(fn) {
     drawingCollection.save(this, ()=>fn());
   }
